@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<launch>
+  <node pkg="pioneer_path" type="pioneer_path" name="circle" output="screen" clear_params="true">
+  </node>
+  <node pkg="pose2vel" type="pose2vel" name="pose2vel" output="screen" clear_params="true">
+    <param name="pgain_x" type="double" value="0.4" />
+    <param name="pgain_y" type="double" value="0.6" />
+    <param name="pgain_theta" type="double" value="0.6" />
+    <param name="igain_x" type="double" value="0.0" />
+    <param name="igain_y" type="double" value="0.0" />
+    <param name="igain_theta" type="double" value="0.0" />
+    <param name="pose_topic_name" type="string" value="/jik/pioneer2/des_pose" />
+    <param name="twist_topic_name" type="string" value="/jik/pioneer2/des_twist" />
+    <param name="robot_frame_name" type="string" value="turtlebot3_burger__base_footprint" />
+    <param name="world_frame_name" type="string" value="world" />
+    <param name="pub_topic_name" type="string" value="/cmd_vel" />
+  </node>
+</launch>
